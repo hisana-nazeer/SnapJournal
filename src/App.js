@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Container, AppBar, Typography, Grow,Grid} from '@material-ui/core';
+import memories from './images/memories.jpeg'
+import Posts from './components/Posts/Posts';
+import Forms from './components/Forms/Forms'
+import useStyles from './style'
+// useStyles is a custom hook
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//This function returns a hook, which is conventionally named useStyles.
 
-export default App;
+//classes: By invoking the useStyles hook, you get an object where each property corresponds to a CSS class name. Y
+
+const App = () => {
+    const classes = useStyles()
+    return (
+        <Container maxWidth ='lg'>
+            <AppBar className= {classes.appBar} position ="static" color = 'inherit'>
+                <Typography className={classes.heading} variant ='h2' align ='center' >Snap Journal</Typography>
+                <img className={classes.image} src={memories} alt="memories" height='60' />
+
+            </AppBar>
+            <Grow in>
+                <Container>
+                <Grid container justifyContent= "space-between" alignItems="stretch" spacing={3}>
+                    <Grid item xs={12} sm={7}>
+                       <Posts />
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Forms />
+                    </Grid>
+                    
+                    
+                </Grid>
+                </Container>
+
+             </Grow>
+
+        </Container>
+    )
+  };
+  export default App;
