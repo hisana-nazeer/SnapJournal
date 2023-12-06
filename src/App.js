@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, AppBar, Typography, Grow,Grid} from '@material-ui/core';
 import memories from './images/memories.jpeg'
 import Posts from './components/Posts/Posts';
-import Forms from './components/Forms/Forms'
+import Forms from './components/Form/Form'
 import useStyles from './style'
 // useStyles is a custom hook
 

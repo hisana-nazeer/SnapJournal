@@ -6,12 +6,12 @@ import thunk from 'redux-thunk';
 import { configureStore } from '@reduxjs/toolkit';
 
 
-import  {reducers} from './reducers';
+import  reducers from './reducers';
 import App from './App';
 
 
-// const store = configureStore({ reducer: reducers });
-const store = configureStore({ reducer: reducers });
+ const store = configureStore({ reducer: reducers });
+// const store = configureStore( reducers,compose(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,7 +1,7 @@
 import React from 'react'
 import useStyles from './styles'
 
-function Forms() {
+function Form() {
   const classes = useStyles()
 
   return (
@@ -11,4 +11,4 @@ function Forms() {
   )
 }
 
-export default Forms
+export default Form
